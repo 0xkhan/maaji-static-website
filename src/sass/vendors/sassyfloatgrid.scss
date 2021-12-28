@@ -1,0 +1,125 @@
+/**
+ * 000 - 600px      ->      Phone
+ * 600 - 900px      ->      Tablet portrait
+ * 900 - 1200px     ->      Tablet landscape
+ * 1200 - 1800px    ->      Default styles
+ * 1800 - infinity  ->      Big desktop
+*/
+
+$grid__bp-xs: 0;
+$grid__bp-sm: 37.5em;   // 600px
+$grid__bp-md: 56.5em;   // 900px
+$grid__bp-lg: 75em;     // 1200px
+$grid__bp-xl: 112.5em;  // 1800px
+
+$big-page-width: $grid__bp-lg;
+$max-page-width: $grid__bp-xl;
+$grid-columns: 12;
+$grid-gutter: 1.5em;
+$contained: 80%;
+
+.container {
+    max-width: $big-page-width;
+    margin: 0 auto;
+}
+
+.container-fluid {
+    max-width: 100%;
+}
+
+.contained {
+    max-width: $contained;
+    margin: 0 auto;
+}
+
+.row {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: $grid-gutter;
+    }
+}
+
+[class^="col-"] {
+    float: left;
+
+    &:not(:last-child) {
+        margin-right: $grid-gutter;
+    }
+}
+
+// Breakpoints
+$map-grid-props: (
+    '': 0,
+    '-xl': $grid__bp-xl,
+    '-lg': $grid__bp-lg,
+    '-md': $grid__bp-md,
+    '-sm': $grid__bp-sm
+);
+
+$container-max-widths: (
+    '-xl': 108.75em,    // 1740px
+    '-lg': 71.25em,     // 1140px
+    '-md': 55.5em,      // 840px
+    '-sm': 33.75em      // 540px
+);
+
+// Build the grid
+// Mixin for creating dynamic media queries
+@mixin create-media-queries($breakpoint) {
+    @if ($breakpoint == 0) {
+        @content;
+    } @else if ($breakpoint == 112.5em) {
+        @media only screen and (min-width: $breakpoint) {
+            @content;
+        }
+    } @else {
+        @media only screen and (max-width: $breakpoint) {
+            @content;
+        }
+    }
+}
+
+@mixin create-col-classes($modifier, $grid-columns, $breakpoint) {
+    @include create-media-queries($breakpoint) {
+        .container#{$modifier}, .container {
+            max-width: map-get($container-max-widths, $modifier);
+        }
+
+        // Create Columns
+        @for $i from 1 through $grid-columns {
+            .col#{$modifier}-#{$i} {
+                width: calc(#{$i} * ((100% - #{11} * #{$grid-gutter}) / #{$grid-columns}) + #{$i - 1} * #{$grid-gutter});
+            }
+        }
+        // Creates Offsets
+        @for $i from 1 through $grid-columns {
+            .col#{$modifier}-offset-#{$i} {
+                margin-left: calc(((100% + #{$grid-gutter}) / #{$grid-columns / $i}));
+            }
+        }
+        // Creates Pushes - pushes elements to the right
+        @for $i from 1 through $grid-columns {
+            .col#{$modifier}-push-#{$i} {
+                position: relative;
+                left: calc(((100% + #{$grid-gutter}) / #{$grid-columns / $i}));
+            }
+        }
+        // Creates Pulls - pulls elements to the left
+        @for $i from 1 through $grid-columns {
+            .col#{$modifier}-push-#{$i} {
+                position: relative;
+                right: calc(((100% + #{$grid-gutter}) / #{$grid-columns / $i}));
+            }
+        }
+    }
+}
+
+// Loops through breakpoints and creates all necessary classes for the right breakpoint
+@each $modifier, $breakpoint in $map-grid-props {
+    @include create-col-classes($modifier, $grid-columns, $breakpoint)
+}

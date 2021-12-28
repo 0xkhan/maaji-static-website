@@ -1,0 +1,27 @@
+{
+  "name": "maaji-static-website",
+  "version": "1.0.0",
+  "description": "Static website for Maaji Restaurant",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node-sass src/sass/main.scss dist/css/main.css -w",
+    "devserver": "live-server",
+
+    "start": "npm-run-all --parallel devserver watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xkhan/maaji-static-website.git"
+  },
+  "author": "Khani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xkhan/maaji-static-website/issues"
+  },
+  "homepage": "https://github.com/0xkhan/maaji-static-website#readme",
+  "devDependencies": {
+    "concat": "^1.0.3",
+    "node-sass": "^7.0.0",
+    "npm-run-all": "^4.1.5"
+  }
+}

@@ -1,0 +1,33 @@
+.menu {
+    &__tabs {
+        text-align: center;
+
+        &--tab {
+            margin-top: 1.5rem;
+
+            &:not(:last-child) {
+                margin-right: 1.5rem;
+            }
+        }
+    }
+
+    &__content {
+        padding: 1.5rem;
+
+        .col-4:nth-child(3) {
+            margin-right: 0;
+        }
+    }
+
+    &__item {
+        text-align: center;
+
+        &-img {
+            width: 50%;
+        }
+
+        &-ingredients {
+            list-style: none;
+        }
+    }
+}

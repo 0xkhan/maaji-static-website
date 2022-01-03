@@ -90,30 +90,159 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--red {
-  background-color: #6d111c;
+  background-color: #f0bf72;
   color: #fff; }
 
 .btn--round {
   border-radius: 5rem; }
 
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #f0bf72;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #f0bf72;
+  padding: 3px;
+  transition: all .2s; }
+
+.btn-text:hover {
+  background-color: #f0bf72;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); }
+
+.btn-text:active {
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0); }
+
 .menu__tabs {
   text-align: center; }
-  .menu__tabs--tab {
-    margin-top: 1.5rem; }
-    .menu__tabs--tab:not(:last-child) {
-      margin-right: 1.5rem; }
+
+.menu__tab:not(:last-child) {
+  margin-right: 1.5rem; }
+
+.menu__tab--active {
+  background-color: #f0bf72;
+  transform: translateY(-0.3rem); }
 
 .menu__content {
-  padding: 1.5rem; }
+  width: 100%;
+  padding: 1.5rem;
+  display: none; }
+  .menu__content .col-6:nth-child(even) {
+    margin-right: 0; }
+  .menu__content .col-6:not(:last-child) {
+    margin-bottom: 4rem; }
   .menu__content .col-4:nth-child(3) {
     margin-right: 0; }
+  .menu__content .col-3:nth-child(4) {
+    margin-right: 0; }
+  .menu__content--active {
+    display: inline-block; }
 
 .menu__item {
   text-align: center; }
   .menu__item-img {
     width: 50%; }
+  .menu__item-price {
+    font-size: 2.5rem;
+    font-weight: 300;
+    display: inline-block; }
   .menu__item-ingredients {
+    color: #666666;
     list-style: none; }
+
+.menu__content-container {
+  margin-top: 10rem; }
+
+.menu-2__tabs {
+  padding: 5rem;
+  background-color: #f2f2f7;
+  border-radius: 1.5rem;
+  margin-top: -22rem; }
+
+.menu-2__item-desc {
+  padding-bottom: 2rem;
+  border-bottom: 1px dashed #999; }
+  .menu-2__item-desc--extra {
+    font-size: 1.6rem;
+    color: #f5365c; }
+
+.menu-2__item-price {
+  font-size: 2rem;
+  font-weight: 300;
+  display: inline-block;
+  float: right;
+  padding: 0 1.5rem;
+  background-color: #f1f1ff;
+  border-radius: .5rem; }
+
+.menu-2__item-ingredients {
+  font-size: 1.4rem;
+  font-style: italic; }
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg); }
+  .story__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%; }
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      .story__shape {
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        border-radius: none; } }
+  .story__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all .5s; }
+  .story__text {
+    transform: skewX(12deg); }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.7rem;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden; }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .story:hover .story__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: .16;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
 
 .header {
   font-size: 1.6rem;
@@ -135,6 +264,17 @@ body {
     float: right; }
     .header__image-box img {
       width: 100%; }
+
+.header-mp {
+  font-size: 1.6rem;
+  padding: 10rem 0 15rem 0;
+  background-color: #f2e1cb; }
+  .header-mp__title {
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 1.2;
+    position: relative;
+    margin-top: 5.5rem; }
 
 .nav {
   width: 100%;
@@ -161,6 +301,77 @@ body {
     font-size: 2rem;
     font-weight: 900; }
 
+.footer {
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 10rem 0;
+  background-color: #333;
+  position: relative; }
+  .footer__logo {
+    font-size: 5rem;
+    font-weight: 900; }
+  .footer__address {
+    letter-spacing: .2rem;
+    text-transform: uppercase; }
+  .footer__telephone {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .1rem; }
+  .footer__social-icon {
+    font-size: 2rem;
+    font-weight: 900; }
+    .footer__social-icon:not(:last-child) {
+      margin-right: 1rem; }
+    .footer__social-icon:link, .footer__social-icon:visited {
+      color: #fff;
+      text-decoration: none; }
+  .footer__open-hours {
+    text-transform: uppercase;
+    letter-spacing: .2rem; }
+  .footer__map {
+    position: absolute;
+    top: 3.9rem;
+    display: inline-block;
+    width: 35rem;
+    z-index: 2; }
+    .footer__map::after {
+      content: "";
+      display: inline-block;
+      width: 35rem;
+      height: 400px;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #f0bf72;
+      z-index: -1; }
+
+.move-to-top {
+  position: absolute;
+  top: -0.3rem;
+  left: 50%;
+  height: 5.5rem;
+  width: 5.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+  line-height: 1;
+  border-radius: 1rem;
+  transform: rotate(45deg) translateX(-50%); }
+  .move-to-top__arrow {
+    font-size: 2.5rem;
+    transform: rotate(-45deg); }
+    .move-to-top__arrow:link, .move-to-top__arrow:visited {
+      color: #fff;
+      text-decoration: none; }
+
+#map {
+  height: 400px;
+  width: 100%; }
+
+.copyright {
+  font-size: 1.3rem; }
+
 section {
   font-size: 1.6rem; }
 
@@ -179,6 +390,13 @@ section {
 
 .section-menu {
   padding: 0 0 15rem 0; }
+
+.section-stories {
+  padding: 10rem 0;
+  position: relative; }
+
+.section-menu-2 {
+  padding: 15rem 0; }
 
 /**
  * 000 - 600px      ->      Phone

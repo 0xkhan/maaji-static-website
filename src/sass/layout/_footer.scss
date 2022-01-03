@@ -1,0 +1,92 @@
+.footer {
+    color: $color-white;
+    font-size: $default-font-size;
+    padding: 10rem 0;
+    background-color: #333;
+    position: relative;
+
+    &__logo {
+        font-size: 5rem;
+        font-weight: 900;
+    }
+
+    &__address {
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+    }
+
+    &__telephone {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: .1rem;
+    }
+    
+    &__social-icon {
+        font-size: 2rem;
+        font-weight: 900;
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        @include normalizeLink;
+    }
+
+    &__open-hours {
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+    }
+
+    &__map {
+        position: absolute;
+        // top: 2rem;
+        top: 3.9rem;
+        display: inline-block;
+        width: 35rem;
+        z-index: 2;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 35rem;
+            height: 400px;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: $color-primary;
+            z-index: -1;
+        }
+    }
+}
+
+.move-to-top {
+    position: absolute;
+    top: -0.3rem;
+    left: 50%;
+    height: 5.5rem;
+    width: 5.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+    line-height: 1;
+    border-radius: 1rem;
+    transform: rotate(45deg) translateX(-50%);
+
+    &__arrow {
+        font-size: 2.5rem;
+        transform: rotate(-45deg);
+
+        @include normalizeLink;
+    }
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.copyright {
+    // display: inline-block;
+    font-size: 1.3rem;
+}

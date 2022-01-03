@@ -9,10 +9,15 @@
 
 @import "components/buttons";
 @import "components/menu";
+@import "components/story";
+@import "components/bg-video";
 
 @import "layout/header";
+@import "layout/header-menu-page";
 @import "layout/navigation";
+@import "layout/footer";
 
 @import "pages/home";
+@import "pages/menu-page";
 
 @import "vendors/sassyfloatgrid.scss";

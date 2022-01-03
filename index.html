@@ -8,14 +8,16 @@
 
     <title>Maaji</title>
 </head>
-<body>
+<body data-page-id="home">
 
     <nav class="nav">
         <div class="container">
             <div class="row">
                 <div class="col-6">
                     <div class="nav__logo">
-                        <img src="dist/img/logo.svg" alt="Maaji">
+                        <a href="/">
+                            <img src="dist/img/logo.svg" alt="Maaji">
+                        </a>
                     </div>
                 </div>
                 <div class="col-6">
@@ -116,20 +118,21 @@
 
                 <div class="menu u-margin-top-xs">
                     <div class="menu__tabs">
-                        <button class="btn btn--round menu__tabs--tab">Klein &amp; Fine</button>
-                        <button class="btn btn--round menu__tabs--tab">Maaji</button>
-                        <button class="btn btn--round menu__tabs--tab">Tagesangebote</button>
-                        <button class="btn btn--round menu__tabs--tab">Maaji Bowls</button>
-                        <button class="btn btn--round menu__tabs--tab">Salate</button>
-                        <button class="btn btn--round menu__tabs--tab">Wraps</button>
+                        <button class="btn btn--round menu__tab menu__tab--1" data-tab="1">Klein &amp; Fine</button>
+                        <button class="btn btn--round menu__tab menu__tab--2" data-tab="2">Maaji</button>
+                        <button class="btn btn--round menu__tab menu__tab--3" data-tab="3">Tagesangebote</button>
+                        <button class="btn btn--round menu__tab menu__tab--4" data-tab="4">Maaji Bowls</button>
+                        <button class="btn btn--round menu__tab menu__tab--5" data-tab="5">Salate</button>
+                        <button class="btn btn--round menu__tab menu__tab--6" data-tab="6">Wraps</button>
                     </div>
-                    <div class="menu__content menu__content-klein-and-fine menu__content--active u-margin-top-xl">
+                    <div class="menu__content menu__content--1 menu__content--active u-margin-top-xl">
                         <div class="row">
                             <div class="col-4">
                                 <div class="menu__item">
                                     <img class="menu__item-img" src="dist/img/header_img.png" alt="Pakorha Bowl">
                                     <div class="menu__item-desc">
-                                        <h3 class="u-margin-bottom-xs">Pakorha Bowl</h3>
+                                        <h3>Samosa Bowl</h3>
+                                        <span class="menu__item-price u-margin-bottom-xs">4,90€</span>
                                         <ul class="menu__item-ingredients">
                                             <li class="menu__item-ingredient">Zwiebeln, Tomaten &amp; Gurken</li>
                                             <li class="menu__item-ingredient">Joghurt-Minz Soße</li>
@@ -142,7 +145,8 @@
                                 <div class="menu__item">
                                     <img class="menu__item-img" src="dist/img/header_img.png" alt="Pakorha Bowl">
                                     <div class="menu__item-desc">
-                                        <h3 class="u-margin-bottom-xs">Pakorha Bowl</h3>
+                                        <h3>Pakorha Bowl</h3>
+                                        <span class="menu__item-price u-margin-bottom-xs">4,90€</span>
                                         <ul class="menu__item-ingredients">
                                             <li class="menu__item-ingredient">Zwiebeln, Tomaten &amp; Gurken</li>
                                             <li class="menu__item-ingredient">Joghurt-Minz Soße</li>
@@ -155,21 +159,185 @@
                                 <div class="menu__item">
                                     <img class="menu__item-img" src="dist/img/header_img.png" alt="Pakorha Bowl">
                                     <div class="menu__item-desc">
-                                        <h3 class="u-margin-bottom-xs">Pakorha Bowl</h3>
+                                        <h3>Aloo-tiki Bowl</h3>
+                                        <span class="menu__item-price u-margin-bottom-xs">5,50€</span>
                                         <ul class="menu__item-ingredients">
                                             <li class="menu__item-ingredient">Zwiebeln, Tomaten &amp; Gurken</li>
-                                            <li class="menu__item-ingredient">Joghurt-Minz Soße</li>
-                                            <li class="menu__item-ingredient">Tamarinasoße</li>
+                                            <li class="menu__item-ingredient">Joghurt-Minz- &amp; Tamarinasoße</li>
+                                            <li class="menu__item-ingredient">Paneer</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="menu__content menu__content--2 u-margin-top-xl">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="menu__item">
+                                    <img class="menu__item-img" src="dist/img/header_img.png" alt="Pakorha Bowl">
+                                    <div class="menu__item-desc">
+                                        <h3>Samosa Bowl</h3>
+                                        <span class="menu__item-price u-margin-bottom-xs">4,90€</span>
+                                        <ul class="menu__item-ingredients">
+                                            <li class="menu__item-ingredient">Zwiebeln, Tomaten &amp; Gurken</li>
+                                            <li class="menu__item-ingredient">Joghurt-Minz Soße</li>
+                                            <li class="menu__item-ingredient">Tamarinasoße</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="menu__item">
+                                    <img class="menu__item-img" src="dist/img/header_img.png" alt="Pakorha Bowl">
+                                    <div class="menu__item-desc">
+                                        <h3>Pakorha Bowl</h3>
+                                        <span class="menu__item-price u-margin-bottom-xs">4,90€</span>
+                                        <ul class="menu__item-ingredients">
+                                            <li class="menu__item-ingredient">Zwiebeln, Tomaten &amp; Gurken</li>
+                                            <li class="menu__item-ingredient">Joghurt-Minz Soße</li>
+                                            <li class="menu__item-ingredient">Tamarinasoße</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="menu__item">
+                                    <img class="menu__item-img" src="dist/img/header_img.png" alt="Pakorha Bowl">
+                                    <div class="menu__item-desc">
+                                        <h3>Aloo-tiki Bowl</h3>
+                                        <span class="menu__item-price u-margin-bottom-xs">5,50€</span>
+                                        <ul class="menu__item-ingredients">
+                                            <li class="menu__item-ingredient">Zwiebeln, Tomaten &amp; Gurken</li>
+                                            <li class="menu__item-ingredient">Joghurt-Minz- &amp; Tamarinasoße</li>
+                                            <li class="menu__item-ingredient">Paneer</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="menu__item">
+                                    <img class="menu__item-img" src="dist/img/header_img.png" alt="Pakorha Bowl">
+                                    <div class="menu__item-desc">
+                                        <h3>Aloo-tiki Bowl</h3>
+                                        <span class="menu__item-price u-margin-bottom-xs">5,50€</span>
+                                        <ul class="menu__item-ingredients">
+                                            <li class="menu__item-ingredient">Zwiebeln, Tomaten &amp; Gurken</li>
+                                            <li class="menu__item-ingredient">Joghurt-Minz- &amp; Tamarinasoße</li>
+                                            <li class="menu__item-ingredient">Paneer</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="menu__item">
+                                    <img class="menu__item-img" src="dist/img/header_img.png" alt="Pakorha Bowl">
+                                    <div class="menu__item-desc">
+                                        <h3>Aloo-tiki Bowl</h3>
+                                        <span class="menu__item-price u-margin-bottom-xs">5,50€</span>
+                                        <ul class="menu__item-ingredients">
+                                            <li class="menu__item-ingredient">Zwiebeln, Tomaten &amp; Gurken</li>
+                                            <li class="menu__item-ingredient">Joghurt-Minz- &amp; Tamarinasoße</li>
+                                            <li class="menu__item-ingredient">Paneer</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /menu -->
+            </div>
+        </section>
+        <section id="section-stories" class="section-stories">
+            <div class="bg-video">
+                <video class="bg-video__content" autoplay muted loop>
+                    <source src="dist/img/stories-video.mp4"/>
+                </video>
+            </div>
+            <div class="container">
+                <div class="u-center-text u-margin-bottom-xl">
+                    <h1 class="heading-primary">Das sagen unsere Kunden</h1>
+                </div>
+
+                <div class="story">
+                    <figure class="story__shape">
+                        <img class="story__img" src="dist/img/thomas.jpg" alt="Customer">
+                        <figcaption class="story__caption">Mar Cel</figcaption>
+                    </figure>
+                    <div class="story__text">
+                        <h3 class="heading-tertiary">
+                            Das Essen hat unglaublich gut geschmeckt
+                        </h3>
+                        <p>
+                            Seit langem mal wieder indisch essen gewesen, und habe gemerkt das ich das wieder öfters machen sollte. Das Essen hat unglaublich gut geschmeckt, das Personal war sehr net und zuvorkommend. Wen ich mal wieder in der Nähe bin komm ich sicherlich wieder vorbei.
+                        </p>
+                    </div>
+                </div>
+                <div class="story u-margin-top-xl">
+                    <figure class="story__shape">
+                        <img class="story__img" src="dist/img/thomas.jpg" alt="Customer">
+                        <figcaption class="story__caption">Mar Cel</figcaption>
+                    </figure>
+                    <div class="story__text">
+                        <h3 class="heading-tertiary">
+                            Das Essen hat unglaublich gut geschmeckt
+                        </h3>
+                        <p>
+                            Seit langem mal wieder indisch essen gewesen, und habe gemerkt das ich das wieder öfters machen sollte. Das Essen hat unglaublich gut geschmeckt, das Personal war sehr net und zuvorkommend. Wen ich mal wieder in der Nähe bin komm ich sicherlich wieder vorbei.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="u-center-text u-margin-top-xl">
+                    <a class="btn-text" target="_blank" href="https://www.google.com/search?&q=maaji+freiburg#lrd=0x47911b7f1d34a2d5:0x3ca9e3d1cdc216be,1,,,">
+                        Alle Google-Bewertung ansehen &rarr;
+                    </a>
                 </div>
             </div>
         </section>
+        <footer class="footer">
+            <div class="move-to-top">
+                <a class="move-to-top__arrow" href="#top">&#8963;</a>
+            </div>
+            <div class="container">
+                <div class="footer__logo u-margin-bottom-m">Maaji</div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="footer__contact-box">
+                            <p class="footer__address">Sundgauallee 49 <br/> 79114 Freiburg</p>
+                            <p class="footer__telephone u-margin-top-m">0761 51466424</p>
+                            
+                            <a class="footer__social-icon" href="#">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a class="footer__social-icon" href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <h2 class="heading-secondary">Öffnungszeiten</h2>
+                        <p class="footer__open-hours">Dienstag Bis Sonntag</p>
+                        <p class="footer__open-hours">11:30 - 14:30 Uhr</p>
+                        <p class="footer__open-hours">17:00 - 21:00 Uhr</p>
+                    </div>
+                    <div class="col-4">
+                        <div class="footer__map">
+                            <div id="map"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright u-margin-top-xxl">
+                    <p>&copy; 2022 Maaji Restaurant</p>
+                </div>
+            </div>
+        </footer>
     </main>
 
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly&channel=2"
+        async
+    ></script>
+    <script src="dist/js/scripts.js"></script>
 </body>
 </html>

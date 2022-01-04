@@ -40,6 +40,10 @@
         &--active {
             display: inline-block;
         }
+
+        &--extra {
+            color: $color-success;
+        }
     }
 
     &__item {
@@ -80,7 +84,7 @@
             border-bottom: 1px dashed #999;
 
             &--extra {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
                 color: $color-danger;
             }
         }

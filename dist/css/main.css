@@ -1,3 +1,22 @@
+/**
+ * 000 - 600px          ->     Phone
+ * 600 - 900px          ->     Tablet portrait
+ * 900 - 1200px         ->     Tablet landscape
+ * 1200 - 1800px        ->     [Normal styles applies]
+ * 1800 - infinity      ->     Big desktop
+ *
+ * Breakpoint argument choices:
+ * phone        ->    000 - 600px    
+ * tab-port     ->    900 - 1200px
+ * tab-land     ->    1200 - 1800px  
+ * big-desktop  ->    1800 - infinity
+ *
+ * 1em = 16px
+ *
+ *
+ * Order of responsiveness:
+ * Base + Typography -> General Layout + Grid -> Page Layout -> Components
+*/
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400&display=swap");
 *,
 *::after,
@@ -8,6 +27,15 @@
 
 html {
   font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.6em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
@@ -21,10 +49,22 @@ body {
 .heading-primary {
   font-size: 6rem;
   font-weight: 900; }
+  @media only screen and (max-width: 56.6em) {
+    .heading-primary {
+      font-size: 5rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .heading-primary {
+      font-size: 3rem; } }
 
 .heading-secondary {
   font-size: 2.5rem;
   font-weight: 700; }
+
+.heading-tertiary {
+  font-size: 2rem;
+  font-weight: 700; }
+  .heading-tertiary--info {
+    color: #f0bf72; }
 
 .lead {
   font-size: 1.8rem; }
@@ -118,12 +158,17 @@ body {
 .menu__tabs {
   text-align: center; }
 
-.menu__tab:not(:last-child) {
-  margin-right: 1.5rem; }
-
-.menu__tab--active {
-  background-color: #f0bf72;
-  transform: translateY(-0.3rem); }
+.menu__tab {
+  margin-top: 1.5rem; }
+  @media only screen and (max-width: 37.5em) {
+    .menu__tab {
+      font-size: 1.4rem;
+      padding: 1rem 2rem; } }
+  .menu__tab:not(:last-child) {
+    margin-right: 1.5rem; }
+  .menu__tab--active {
+    background-color: #f0bf72;
+    transform: translateY(-0.3rem); }
 
 .menu__content {
   width: 100%;
@@ -157,11 +202,29 @@ body {
 .menu__content-container {
   margin-top: 10rem; }
 
+.menu__content-extra {
+  width: 100%;
+  padding: 1.5rem; }
+  .menu__content-extra .col-6:nth-child(even) {
+    margin-right: 0; }
+  .menu__content-extra .col-6:not(:last-child) {
+    margin-bottom: 4rem; }
+
 .menu-2__tabs {
   padding: 5rem;
   background-color: #f2f2f7;
   border-radius: 1.5rem;
   margin-top: -22rem; }
+  @media only screen and (max-width: 37.5em) {
+    .menu-2__tabs {
+      padding: 2.5rem; } }
+
+.menu-2__tab {
+  margin-top: .3rem; }
+  @media only screen and (max-width: 37.5em) {
+    .menu-2__tab {
+      font-size: 1.4rem;
+      padding: 1rem 1.5rem; } }
 
 .menu-2__item-desc {
   padding-bottom: 2rem;
@@ -193,6 +256,14 @@ body {
   padding-left: 9rem;
   font-size: 1.6rem;
   transform: skewX(-12deg); }
+  @media only screen and (max-width: 56.6em) {
+    .story {
+      width: 100%; } }
+  @media only screen and (max-width: 37.5em) {
+    .story {
+      transform: skewX(0deg);
+      padding: 3rem;
+      padding-left: 6rem; } }
   .story__shape {
     width: 15rem;
     height: 15rem;
@@ -207,12 +278,18 @@ body {
         shape-outside: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
         border-radius: none; } }
+    @media only screen and (max-width: 37.5em) {
+      .story__shape {
+        transform: translateX(-3rem) skewX(0deg); } }
   .story__img {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
     transition: all .5s; }
   .story__text {
     transform: skewX(12deg); }
+    @media only screen and (max-width: 37.5em) {
+      .story__text {
+        transform: skewX(0deg); } }
   .story__caption {
     position: absolute;
     top: 50%;
@@ -249,11 +326,16 @@ body {
 .header {
   font-size: 1.6rem;
   padding: 10rem 0 15rem 0;
-  background-color: #f2e1cb;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+  background-color: #f2e1cb; }
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); } }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); } }
   .header__title {
-    font-size: 6rem;
-    font-weight: 900;
     line-height: 1.2;
     position: relative;
     margin-top: 5.5rem; }
@@ -263,7 +345,15 @@ body {
     margin: 4rem 0; }
   .header__image-box {
     width: 45rem;
-    float: right; }
+    float: right;
+    overflow: hidden; }
+    @media only screen and (max-width: 56.6em) {
+      .header__image-box {
+        width: 38rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .header__image-box {
+        width: 1rem;
+        display: none; } }
     .header__image-box img {
       width: 100%; }
 
@@ -272,8 +362,6 @@ body {
   padding: 10rem 0 15rem 0;
   background-color: #f2e1cb; }
   .header-mp__title {
-    font-size: 6rem;
-    font-weight: 900;
     line-height: 1.2;
     position: relative;
     margin-top: 5.5rem; }
@@ -309,6 +397,9 @@ body {
   padding: 10rem 0;
   background-color: #333;
   position: relative; }
+  @media only screen and (max-width: 37.5em) {
+    .footer .col-sm-6:nth-child(even) {
+      margin-right: 0; } }
   .footer__logo {
     font-size: 5rem;
     font-weight: 900; }
@@ -336,6 +427,10 @@ body {
     display: inline-block;
     width: 35rem;
     z-index: 2; }
+    @media only screen and (max-width: 37.5em) {
+      .footer__map {
+        position: relative;
+        width: 100%; } }
     .footer__map::after {
       content: "";
       display: inline-block;
@@ -346,6 +441,9 @@ body {
       right: 1rem;
       background-color: #f0bf72;
       z-index: -1; }
+      @media only screen and (max-width: 37.5em) {
+        .footer__map::after {
+          width: 100%; } }
 
 .move-to-top {
   position: absolute;
@@ -387,8 +485,21 @@ section {
     display: inline-block;
     width: 50rem;
     line-height: 1.2; }
+    @media only screen and (max-width: 37.5em) {
+      .section-order__title {
+        width: 100%; } }
   .section-order__inside {
     margin-bottom: 10rem; }
+    @media only screen and (max-width: 37.5em) {
+      .section-order__inside {
+        margin-top: 5rem;
+        margin-bottom: 5rem; } }
+  @media only screen and (max-width: 56.6em) {
+    .section-order__icon {
+      width: 90%; } }
+  @media only screen and (max-width: 37.5em) {
+    .section-order__icon {
+      width: 65%; } }
 
 .section-menu {
   padding: 0 0 15rem 0; }
@@ -399,6 +510,20 @@ section {
 
 .section-menu-2 {
   padding: 15rem 0; }
+
+.section-extra {
+  padding: 10rem 0 15rem 0;
+  background-color: #faf4ec; }
+
+.section-divider {
+  width: 35%;
+  height: 1px;
+  display: block;
+  margin: 5rem auto;
+  background-color: rgba(0, 0, 0, 0.2); }
+  @media only screen and (max-width: 37.5em) {
+    .section-divider {
+      margin: 3rem auto; } }
 
 /**
  * 000 - 600px      ->      Phone

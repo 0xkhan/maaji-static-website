@@ -1,3 +1,20 @@
 .section-menu-2 {
     padding: 15rem 0;
 }
+
+.section-extra {
+    padding: 10rem 0 15rem 0;
+    background-color: lighten($color-primary-light, 8%);
+}
+
+.section-divider {
+    width: 35%;
+    height: 1px;
+    display: block;
+    margin: 5rem auto;
+    background-color: rgba($color-black, .2);
+
+    @include respond(phone) {
+        margin: 3rem auto;
+    }
+}

@@ -2,11 +2,18 @@
     font-size: 1.6rem;
     padding: 10rem 0 15rem 0;
     background-color: $color-primary-light;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+
+    @include respond(phone) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
 
     &__title {
-        font-size: $h1-font-size;
-        font-weight: 900;
         line-height: 1.2;
         position: relative;
         margin-top: 5.5rem;
@@ -21,6 +28,16 @@
     &__image-box {
         width: 45rem;
         float: right;
+        overflow: hidden;
+
+        @include respond(tab-port) {
+            width: 38rem;
+        }
+        
+        @include respond(phone) {
+            width: 1rem;
+            display: none;
+        }
 
         img {
             width: 100%;

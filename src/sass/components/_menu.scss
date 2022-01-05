@@ -4,7 +4,12 @@
     }
     
     &__tab {
-        // margin-top: 1.5rem;
+        margin-top: 1.5rem;
+        
+        @include respond(phone) {
+            font-size: 1.4rem;
+            padding: 1rem 2rem;
+        }
 
         &:not(:last-child) {
             margin-right: 1.5rem;
@@ -70,12 +75,38 @@
     margin-top: 10rem;
 }
 
+.menu__content-extra {
+    width: 100%;
+    padding: 1.5rem;
+
+    .col-6:nth-child(even) {
+        margin-right: 0;
+    }
+
+    .col-6:not(:last-child) {
+        margin-bottom: 4rem;
+    }
+}
+
 .menu-2 {
     &__tabs {
         padding: 5rem;
         background-color: #f2f2f7;
         border-radius: 1.5rem;
         margin-top: -22rem;
+
+        @include respond(phone) {
+            padding: 2.5rem;
+        }
+    }
+    
+    &__tab {
+        margin-top: .3rem;
+
+        @include respond(phone) {
+            font-size: 1.4rem;
+            padding: 1rem 1.5rem;
+        }
     }
 
     &__item {

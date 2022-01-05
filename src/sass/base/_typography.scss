@@ -10,11 +10,28 @@ body {
 .heading-primary {
     font-size: $h1-font-size;
     font-weight: 900;
+
+    @include respond(tab-port) {
+        font-size: 5rem;
+    }
+
+    @include respond(phone) {
+        font-size: 3rem;
+    }
 }
 
 .heading-secondary {
     font-size: $h2-font-size;
     font-weight: $h2-font-weight;
+}
+
+.heading-tertiary {
+    font-size: $h3-font-size;
+    font-weight: $h3-font-weight;
+
+    &--info {
+        color: $color-primary;
+    }
 }
 
 .lead {

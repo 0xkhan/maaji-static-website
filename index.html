@@ -14,39 +14,49 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <div class="nav__logo">
-                        <a href="/">
-                            <img src="dist/img/logo.svg" alt="Maaji">
+                    <div class="nav__logo-container">
+                        <a class="nav__logo" href="/">
+                            <!--<img src="dist/img/logo.svg" alt="Maaji">-->
+                            <span>Maaji</span>
                         </a>
                     </div>
                 </div>
                 <div class="col-6">
-                    <ul class="nav__links">
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">Menu</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">About Us</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">
-                                +49 152 98457327
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link nav__link--icon" href="#">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link nav__link--icon" href="#">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">en</a>
-                        </li>
-                    </ul>
+                    <input id="nav-toggle" class="nav__checkbox" type="checkbox">
+                    <label class="nav__button" for="nav-toggle">
+                        <span class="nav__icon">&nbsp;</span>
+                    </label>
+
+                    <div class="nav__overlay">&nbsp;</div>
+
+                    <div class="nav__nav">
+                        <ul class="nav__links">
+                            <li class="nav__item">
+                                <a class="nav__link" href="menu.html">Menu</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">About Us</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="tel:+49 152 98457327">
+                                    +49 761 51466424
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link nav__link--icon" href="https://www.instagram.com/maaji_restaurant/">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link nav__link--icon" href="https://www.instagram.com/maaji_restaurant/">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">en</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -114,7 +124,7 @@
 
         <section id="section-menu" class="section-menu">
             <div class="container">
-                <h1 class="section-menu__title heading-primary u-center-text">Unser Menü</h1>
+                <h1 id="menu" class="section-menu__title heading-primary u-center-text">Unser Menü</h1>
 
                 <div class="menu u-margin-top-xs">
                     <div class="menu__tabs">
@@ -356,8 +366,8 @@
                 </div>
 
                 <div class="story">
-                    <figure class="story__shape">
-                        <img class="story__img" src="dist/img/thomas.jpg" alt="Customer">
+                    <figure class="story__shape story__shape--1">
+                        <!--<img class="story__img" src="dist/img/thomas.jpg" alt="Customer">-->
                         <figcaption class="story__caption">Mar Cel</figcaption>
                     </figure>
                     <div class="story__text">
@@ -370,16 +380,16 @@
                     </div>
                 </div>
                 <div class="story u-margin-top-xl">
-                    <figure class="story__shape">
-                        <img class="story__img" src="dist/img/thomas.jpg" alt="Customer">
-                        <figcaption class="story__caption">Mar Cel</figcaption>
+                    <figure class="story__shape story__shape--2">
+                        <!--<img class="story__img" src="dist/img/thomas.jpg" alt="Customer">-->
+                        <figcaption class="story__caption">Beri</figcaption>
                     </figure>
                     <div class="story__text">
                         <h3 class="heading-tertiary">
-                            Das Essen hat unglaublich gut geschmeckt
+                            Das Personal ist unglaublich freundlich
                         </h3>
                         <p>
-                            Seit langem mal wieder indisch essen gewesen, und habe gemerkt das ich das wieder öfters machen sollte. Das Essen hat unglaublich gut geschmeckt, das Personal war sehr net und zuvorkommend. Wen ich mal wieder in der Nähe bin komm ich sicherlich wieder vorbei.
+                            Das Personal ist unglaublich freundlich, wir haben uns direkt willkommen gefühlt. Das Ambiente ist so schön: die Musik im Hintergrund, die Einrichtung - wow! Das Essen war soo lecker und richtig gut gewürzt. Das Fleisch war zart, die Portionen sehr sehr groß für den Preis. Und auch die Nachspeise war frisch und lecker zubereitet ...
                         </p>
                     </div>
                 </div>
@@ -403,10 +413,10 @@
                             <p class="footer__address">Sundgauallee 49 <br/> 79114 Freiburg</p>
                             <p class="footer__telephone u-margin-top-m">0761 51466424</p>
                             
-                            <a class="footer__social-icon" href="#">
+                            <a target="_blank" class="footer__social-icon" href="https://www.instagram.com/maaji_restaurant/">
                                 <i class="fab fa-facebook"></i>
                             </a>
-                            <a class="footer__social-icon" href="#">
+                            <a target="_blank" class="footer__social-icon" href="https://www.instagram.com/maaji_restaurant/">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>

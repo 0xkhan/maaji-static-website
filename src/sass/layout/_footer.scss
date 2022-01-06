@@ -51,7 +51,7 @@
         top: 3.9rem;
         display: inline-block;
         width: 35rem;
-        z-index: 2;
+        z-index: 1;
 
         @include respond(phone) {
             position: relative;

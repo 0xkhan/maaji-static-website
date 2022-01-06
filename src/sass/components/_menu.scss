@@ -5,14 +5,27 @@
     
     &__tab {
         margin-top: 1.5rem;
-        
+       
+        @include respond(tab-port) {
+            padding: 1rem 2rem;
+        }
+
         @include respond(phone) {
             font-size: 1.4rem;
             padding: 1rem 2rem;
+            margin-top: .8rem;
         }
 
         &:not(:last-child) {
             margin-right: 1.5rem;
+            
+            @include respond(tab-port) {
+                margin-right: .3rem;
+            }
+
+            @include respond(phone) {
+                margin-right: .3rem;
+            }
         }
 
         &--active {
@@ -94,14 +107,25 @@
         background-color: #f2f2f7;
         border-radius: 1.5rem;
         margin-top: -22rem;
+        
+        @include respond(tab-port) {
+            padding: 2.5rem;
+            margin-top: -19.6rem;
+        }
 
         @include respond(phone) {
-            padding: 2.5rem;
+            text-align: center;
+            padding: 2rem;
+            margin-top: -21rem;
         }
     }
     
     &__tab {
         margin-top: .3rem;
+
+        @include respond(tab-port) {
+            padding: 1rem 1.75rem;
+        }
 
         @include respond(phone) {
             font-size: 1.4rem;

@@ -8,9 +8,90 @@
     background: transparent;
     z-index: 2;
 
+    &__logo {
+        &:link,
+        &:visited {
+            font-size: 16px;
+            font-weight: 900;
+            color: $color-font-primary;
+            text-decoration: none;
+        }
+    }
+
+    &__nav {
+        @include respond(tab-port) {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1500;
+
+            opacity: 0;
+            width: 0;
+            transition: all .8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+        }
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__button {
+        display: none;
+        height: 6rem;
+        width: 6rem;
+        text-align: center;
+        position: fixed;
+        top: 1rem;
+        right: 11rem;
+        background-color: $color-white;
+        border-radius: 50%;
+        box-shadow: 0 1rem 3rem rgba($color-black, .1);
+        cursor: pointer;
+        z-index: 2000;
+        
+        @include respond(tab-port) {
+            display: block;
+        }
+
+        @include respond(phone) {
+            right: 5rem;
+        }
+    }
+
+    &__overlay {
+        display: none;
+        height: 5rem;
+        width: 5rem;
+        position: fixed;
+        top: 1.5rem;
+        right: 11.5rem;
+        border-radius: 50%;
+
+        background-image: radial-gradient($color-primary-light, $color-primary-dark);
+        z-index: 1000;
+        transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
+        
+        @include respond(tab-port) {
+            display: block;
+        }
+
+        @include respond(phone) {
+            right: 5.5rem;
+        }
+    }
+
     &__links {
         list-style: none;
         float: right;
+
+        @include respond(tab-port) {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            width: 65%;
+        }
     }
 
     &__item {
@@ -19,20 +100,95 @@
         &:not(:last-child) {
             margin-right: 3rem;
         }
+
+        @include respond(tab-port) {
+            display: block;
+            margin: 1rem;
+        }
     }
 
     &__link {
+        font-size: 1.4rem;
+
         &:link,
         &:visited {
             color: $color-font-primary;
+            font-weight: 900;
             text-decoration: none;
             text-transform: uppercase;
             display: inline-block;
+
+            @include respond(tab-port) {
+                font-size: 3rem;
+                font-weight: 400;
+            }
         }
 
         &--icon {
-            font-size: 2rem;
-            font-weight: 900;
+            font-size: 1.8rem;
+            line-height: 1;
+
+            @include respond(tab-port) {
+                font-size: 3rem;
+            }
         }
+    }
+
+    // Overlay Functionality
+    &__checkbox:checked ~ &__overlay {
+        transform: scale(80);
+    }
+
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
+    }
+
+    // Menu Icon
+    &__icon {
+        position: relative;
+        margin-top: 3rem;
+
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-font-primary;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before { top: -0.8rem; }
+        &::after { top: 0.8rem; }
+    }
+
+    // Menu Button Animation
+    &__button:hover &__icon::before {
+        top: -1rem;
+    }
+    &__button:hover &__icon::after {
+        top: 1rem;
+    }
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
     }
 }

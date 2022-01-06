@@ -28,6 +28,14 @@
         overflow: hidden;
         border-radius: 50%;
 
+        &--1 {
+            background-color: darken(#fff6ce, 15%);
+        }
+
+        &--2 {
+            background-color: darken(#daf2e0, 15%);
+        }
+
         @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
             -webkit-shape-outside: circle(50% at 50% 50%);
             shape-outside: circle(50% at 50% 50%);
@@ -59,7 +67,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, 20%);
-        color: $color-white;
+        // color: $color-white;
+        color: $color-font-primary;
         text-transform: uppercase;
         text-align: center;
         font-size: 1.7rem;

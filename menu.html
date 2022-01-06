@@ -14,38 +14,48 @@
             <div class="row">
                 <div class="col-6">
                     <div class="nav__logo">
-                        <a href="/">
-                            <img src="dist/img/logo.svg" alt="Maaji">
+                        <a class="nav__logo" href="/">
+                            <!--<img src="dist/img/logo.svg" alt="Maaji">-->
+                            <span>Maaji</span>
                         </a>
                     </div>
                 </div>
                 <div class="col-6">
-                    <ul class="nav__links">
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">Menu</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">About Us</a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">
-                                +49 152 98457327
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link nav__link--icon" href="#">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link nav__link--icon" href="#">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a class="nav__link" href="#">en</a>
-                        </li>
-                    </ul>
+                    <input id="nav-toggle" class="nav__checkbox" type="checkbox">
+                    <label class="nav__button" for="nav-toggle">
+                        <span class="nav__icon">&nbsp;</span>
+                    </label>
+
+                    <div class="nav__overlay">&nbsp;</div>
+
+                    <div class="nav__nav">
+                        <ul class="nav__links">
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">Menu</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">About Us</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">
+                                    +49 761 51466424
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a target="_blank" class="nav__link nav__link--icon" href="https://www.instagram.com/maaji_restaurant/">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a target="_blank" class="nav__link nav__link--icon" href="https://www.instagram.com/maaji_restaurant/">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#">en</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

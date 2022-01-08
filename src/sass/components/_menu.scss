@@ -107,6 +107,7 @@
         background-color: #f2f2f7;
         border-radius: 1.5rem;
         margin-top: -22rem;
+        text-align: center;
         
         @include respond(tab-port) {
             padding: 2.5rem;

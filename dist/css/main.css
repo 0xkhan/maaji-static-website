@@ -224,7 +224,8 @@ body {
   padding: 5rem;
   background-color: #f2f2f7;
   border-radius: 1.5rem;
-  margin-top: -22rem; }
+  margin-top: -22rem;
+  text-align: center; }
   @media only screen and (max-width: 56.6em) {
     .menu-2__tabs {
       padding: 2.5rem;
@@ -325,6 +326,10 @@ body {
     opacity: 0;
     transition: all .5s;
     backface-visibility: hidden; }
+    @media only screen and (max-width: 56.6em) {
+      .story__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%); } }
   .story:hover .story__caption {
     opacity: 1;
     transform: translate(-50%, -50%); }
@@ -616,6 +621,9 @@ section {
     display: inline-block;
     width: 50rem;
     line-height: 1.2; }
+    @media only screen and (max-width: 56.6em) {
+      .section-order__title {
+        width: 30rem; } }
     @media only screen and (max-width: 37.5em) {
       .section-order__title {
         width: 100%; } }

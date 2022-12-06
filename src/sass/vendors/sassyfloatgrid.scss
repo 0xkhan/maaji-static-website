@@ -50,6 +50,16 @@ $contained: 80%;
     &:not(:last-child) {
         margin-right: $grid-gutter;
     }
+    
+    @media only screen and (max-width: 56.5em) {
+        &:not(:last-child) {
+            margin-right: 0;
+        }
+
+        &:not(:nth-child(even)) {
+            margin-right: $grid-gutter;
+        }
+    }
 }
 
 // Breakpoints

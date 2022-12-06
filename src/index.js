@@ -1,10 +1,14 @@
+import './sass/main.scss';
+import './assets/eatinside_icon.svg';
+import './assets/header_img.png';
+import './assets/og-img.png';
+import './assets/takeaway_icon.svg';
+// import './assets/stories-video.mp4';
+
 'use strict';
 
 const bodyElement = document.querySelector('body');
 const pageId = bodyElement.getAttribute('data-page-id');
-    // const tabs = document.querySelectorAll('.menu__tab');
-    // const tabsContainer = document.querySelector('.menu__tabs');
-    // const tabsContent = document.querySelectorAll('.menu__content');
 
 function menu(tab, container, content) {
     const tabs = document.querySelectorAll(`.${tab}`);
@@ -41,8 +45,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
             // Do Nothing
     }
 });
-
-
 
 // Google maps
 function initMap() {

@@ -94,6 +94,14 @@ body {
   font-size: 1.8rem;
 }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .u-center-text {
   text-align: center !important;
 }
@@ -338,6 +346,17 @@ body {
 .menu-2__item-ingredients {
   font-size: 1.4rem;
   font-style: italic;
+}
+
+.spinner {
+  margin: 5rem auto;
+  text-align: center;
+}
+.spinner svg {
+  width: 5rem;
+  height: 5rem;
+  stroke-width: 2;
+  animation: rotate 2s infinite linear;
 }
 
 .story {
@@ -1856,4 +1875,4 @@ section {
   }
 }
 
-/*# sourceMappingURL=bundlebd4befe4c482aa784807.css.map*/
+/*# sourceMappingURL=bundle3923138429c193fd41f8.css.map*/

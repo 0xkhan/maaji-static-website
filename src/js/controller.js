@@ -1,20 +1,45 @@
-import * as model from './model.js';
+import model from './model';
 import view from './view';
 
-export const controlMenu = async function() {
-    try {
-        view.renderSpinner();
-        await model.loadMenu();
-        const menuCats = model.state.menuCategories;
-        view.renderCatBar(menuCats);
-        view.render(model.state);
-    } catch(err) {
-        console.error(err);
+class Controller {
+
+    constructor() {
+        this.init();
+    }
+
+    async controlMenu() {
+        try {
+            view.renderSpinner();
+            await model.loadMenu();
+            const menuCats = model.state.menuCategories;
+            view.renderCatBar(menuCats);
+            view.render(model.state);
+        } catch(err) {
+            view.renderError();
+        }
+    }
+
+    init() {
+        view.addHandlerMenu(this.controlMenu);
     }
 }
 
-const init = function() {
-    view.addHandlerMenu(controlMenu);
-}
+export default new Controller();
 
-init();
+// export const controlMenu = async function() {
+//     try {
+//         view.renderSpinner();
+//         await model.loadMenu();
+//         const menuCats = model.state.menuCategories;
+//         view.renderCatBar(menuCats);
+//         view.render(model.state);
+//     } catch(err) {
+//         view.renderError();
+//     }
+// }
+//
+// const init = function() {
+//     view.addHandlerMenu(controlMenu);
+// }
+//
+// init();

@@ -55,6 +55,9 @@ class View {
                 ${this.#errorMessage}
             </div>
         `;
+
+        this.#clear(this.#menuCatElem);
+        this.#menuCatElem.insertAdjacentHTML('afterbegin', markup);
     }
 
     #clear(elem) {
@@ -93,7 +96,6 @@ class View {
         `;
     }
 
-
     async addHandlerMenu(handler) {
         function menu(tab, container, content) {
             handler().then(() => {
@@ -107,11 +109,8 @@ class View {
 
                     // Add active class to the button that is clicked
                     // tabs.forEach((tab) => tab.classList.remove('menu__tab--active'));
-                    tabs.forEach((tab) => {
-                        tab.classList.remove('menu__tab--active');
-                    });
+                    tabs.forEach((tab) => tab.classList.remove('menu__tab--active'));
                     clicked.classList.add('menu__tab--active');
-                    console.log(tabs);
 
                     // Activate content area
                     tabsContent.forEach((tabContent) => tabContent.classList.remove('menu__content--active'));

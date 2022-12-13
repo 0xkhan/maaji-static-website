@@ -161,3 +161,15 @@
         }
     }
 }
+
+.spinner {
+    margin: 5rem auto;
+    text-align: center;
+
+    svg {
+        width: 5rem;
+        height: 5rem;
+        stroke-width: 2;
+        animation: rotate 2s infinite linear;
+    }
+}
